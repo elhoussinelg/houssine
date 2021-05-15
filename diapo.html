@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			img{
+				width:800px;
+				display:block;
+				margin:40px auto;
+			}
+		</style>
+		<script>
+			i=2;
+			op=0;
+			function diapo(){
+				setTimeout("diapo()",10);
+				document.getElementById("monimage").style.opacity=op;
+				op+=0.01;
+				if(op>2){
+					op=0;
+					document.getElementById("monimage").src="images/mong"+i+".jpg";
+					i+=1;
+					if(i>4) i=1;
+				}
+			}
+		</script>
+	</head>
+	<body onLoad="diapo()">
+		<img id="monimage" src="images/mong1.jpg" />
+	</body>
+</html>

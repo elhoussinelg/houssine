@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Copie</title>
+		<script>
+			function copie(){
+				document.fo.b.value=document.fo.a.value;
+			}
+		</script>
+	</head>
+	<body>
+		<form name="fo">
+			<input type="text" name="a" onKeyUp="copie()" /><br />
+			<input type="text" name="b" /><br />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Calculatrice</title>
+		<style>
+			body{
+				text-align:center;
+			}
+			input[type="text"]{
+				display:block;
+				margin:10px auto;
+				border:solid 1px #EEE;
+				padding:10px 20px;
+				outline:none;
+				font:16pt monospace;
+				color:#393;
+				text-align:center;
+			}
+		</style>
+		<script>
+			i=1000;
+			function dec(){
+				t=setTimeout("dec()",10);
+				document.fo.aff.value=i;
+				if(i>0)
+					i-=1;
+				else{
+					clearTimeout(t);
+					document.fo.aff.value="Fin";
+				}
+				
+			}
+		</script>
+	</head>
+	<body onLoad="dec()">
+		<form name="fo">
+			<input type="text" name="aff" value="10" />
+		</form>
+	</body>
+</html>

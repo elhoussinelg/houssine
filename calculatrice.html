@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Calculatrice</title>
+		<style>
+			body{
+				text-align:center;
+			}
+			input[type="text"]{
+				display:block;
+				margin:10px auto;
+				border:solid 1px #EEE;
+				padding:10px 20px;
+				outline:none;
+				font:16pt monospace;
+				color:#393;
+				text-align:right;
+			}
+			input[type="button"]{
+				margin:10px;
+				border:none;
+				padding:10px;
+				outline:none;
+				font:16pt monospace;
+				background-color:#5B5;
+				color:#FFF;
+				width:60px;
+				cursor:pointer;
+				transition:all 0.3s ease;
+			}
+			input[type="button"]:hover{
+				transform:scale(1.2);
+				background-color:#393;
+				transition:all 0.3s ease;
+			}
+		</style>
+		<script>
+
+			function operation(op){
+				if(op=="+")
+					document.fo.res.value=parseFloat(document.fo.op1.value)+parseFloat(document.fo.op2.value);
+				if(op=="-")
+					document.fo.res.value=parseFloat(document.fo.op1.value)-parseFloat(document.fo.op2.value);
+				if(op=="x")
+					document.fo.res.value=parseFloat(document.fo.op1.value)*parseFloat(document.fo.op2.value);
+				if(op=="/"){
+					if(document.fo.op2.value!=0)
+						document.fo.res.value=parseFloat(document.fo.op1.value)/parseFloat(document.fo.op2.value);
+					else
+						document.fo.res.value="Err";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="fo">
+			<input type="text" name="op1" />
+			<input type="text" name="op2" />
+			<input type="button" value="+" onClick="operation(this.value)" />
+			<input type="button" value="-" onClick="operation(this.value)" />
+			<input type="button" value="x" onClick="operation(this.value)" />
+			<input type="button" value="/" onClick="operation(this.value)" />
+			<input type="text" name="res" />
+		</form>
+	</body>
+</html>

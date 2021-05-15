@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.maClasse{
+				color:red;
+				text-align:center;
+				font-family:verdana;
+				background-color:yellow;
+				padding:20px;
+				margin:10px;
+			}
+		</style>
+		<script>
+			function f(){
+				document.getElementById("divi").innerHTML="Salut";
+				document.getElementById("divi").className="maClasse";
+			}	
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Changer" onClick="f()" />
+		<div id="divi">Bonjour</div>
+	</body>
+</html>

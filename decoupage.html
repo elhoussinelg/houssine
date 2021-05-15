@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Calculatrice</title>
+		<style>
+			body{
+				text-align:center;
+			}
+			input[type="text"]{
+				display:block;
+				margin:10px auto;
+				border:solid 1px #EEE;
+				padding:10px 20px;
+				outline:none;
+				font:16pt monospace;
+				color:#393;
+				text-align:left;
+			}
+		</style>
+		<script>
+			str="Cette chaine a été découpée en Javascript.";
+			i=0;
+			dir="toRight";
+			function decoup(){
+				t=setTimeout("decoup()",40);
+				document.fo.aff.value=str.substring(0,i);
+				if(dir=="toRight"){
+					i+=1;
+					if(i>=str.length)
+						dir="toLeft";
+				}
+				if(dir=="toLeft"){
+					i-=1;
+					if(i<0)
+						dir="toRight";
+				}
+			}
+		</script>
+	</head>
+	<body onLoad="decoup()">
+		<form name="fo">
+			<input type="text" name="aff" size="50" />
+		</form>
+	</body>
+</html>

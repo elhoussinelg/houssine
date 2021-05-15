@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Calculatrice</title>
+		<style>
+			body{
+				text-align:center;
+			}
+			input[type="text"]{
+				display:block;
+				margin:10px auto;
+				border:solid 1px #EEE;
+				padding:10px 20px;
+				outline:none;
+				font:16pt monospace;
+				color:#393;
+				text-align:left;
+			}
+		</style>
+		<script>
+			function rdm(){
+				setTimeout("rdm()",40);
+				document.fo.aff.value=Math.round(Math.random()*1000000);
+			}
+			function horloge(){
+				setTimeout("horloge()",1000);
+				d=new Date();
+				h=d.getHours();
+				m=d.getMinutes();
+				s=d.getSeconds();
+				if(s%2==0)
+					sep=":";
+				else
+					sep=" ";
+				if(h<10) h="0"+h;
+				if(m<10) m="0"+m;
+				if(s<10) s="0"+s;
+				document.fo.hor.value=h+sep+m+sep+s;
+			}
+			jour=new Array(
+				"Dimanche",
+				"Lundi",
+				"Mardi",
+				"Mercredi",
+				"Jeudi",
+				"Vendredi",
+				"Samedi"
+			);
+			mois=new Array(
+				"janvier",
+				"Févier",
+				"Mars"
+			);
+			function jds(){
+				da=new Date();
+				document.fo.auj.value=jour[da.getDay()]+" "+da.getDate()+" "+mois[da.getMonth()]+" "+da.getFullYear();
+			}
+			function init(){
+				rdm();
+				horloge();
+				jds();
+			}
+		</script>
+	</head>
+	<body onLoad="init()">
+		<form name="fo">
+			<input type="text" name="hor" size="8" />
+			<input type="text" name="auj" size="30" />
+			<input type="text" name="aff" size="30" />
+		</form>
+	</body>
+</html>
